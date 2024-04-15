@@ -6,11 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="521d73cf-4688-471c-abc6-c5560e341713" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskmate/taskmate/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/taskmate/taskmate/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskmate/todolist_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/taskmate/todolist_app/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -77,7 +86,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1713167074862</updated>
-      <workItem from="1713167075903" duration="2068000" />
+      <workItem from="1713167075903" duration="10883000" />
     </task>
     <servers />
   </component>
