@@ -6,9 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="521d73cf-4688-471c-abc6-c5560e341713" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskmate/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/taskmate/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/taskmate/taskmate/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/taskmate/taskmate/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/taskmate/todolist_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/taskmate/todolist_app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/taskmate/todolist_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/taskmate/todolist_app/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskmate/taskmate/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/taskmate/taskmate/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskmate/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/taskmate/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskmate/todolist_app/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/taskmate/todolist_app/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskmate/todolist_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/taskmate/todolist_app/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +51,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/taskmate/static" />
+      <recent name="$PROJECT_DIR$/taskmate" />
       <recent name="$PROJECT_DIR$/taskmate/todolist_app/templates" />
     </key>
   </component>
@@ -93,7 +98,7 @@
       <option name="presentableId" value="Default" />
       <updated>1713167074862</updated>
       <workItem from="1713167075903" duration="18008000" />
-      <workItem from="1713231063233" duration="2096000" />
+      <workItem from="1713231063233" duration="6852000" />
     </task>
     <servers />
   </component>
