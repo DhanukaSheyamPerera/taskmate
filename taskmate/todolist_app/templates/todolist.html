@@ -7,27 +7,32 @@
 {% block content %}
 <div class="container">
     <br>
-    <form>
-        <div class="mb-3">
-            <label for="task" class="form-label">Task</label>
-            <input type="text" class="form-control" id="task" aria-describedby="emailHelp" placeholder="New Task?">
-<!--            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <form method="POST">
+        {% csrf_token %}
+        <div class="row">
+            <label for="task" class="form-label col-lg-4"></label>
+            <div class="col-lg-6">
+                <input type="text" class="form-control" id="task" name="task" placeholder="New Task?">
+            </div>
+            <div class="col-lg-2">
+                <button type="submit" class="btn btn-primary">Add Task</button>
+            </div>
         </div>
-<!--        <div class="mb-3">-->
-<!--            <label for="exampleInputPassword1" class="form-label">Password</label>-->
-<!--            <input type="password" class="form-control" id="exampleInputPassword1">-->
-<!--        </div>-->
-<!--        <div class="mb-3 form-check">-->
-<!--            <input type="checkbox" class="form-check-input" id="exampleCheck1">-->
-<!--            <label class="form-check-label" for="exampleCheck1">Check me out</label>-->
-<!--        </div>-->
-        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+
     <br>
     <table class="table">
         <thead class="table-dark">
         <tr>
-            <th scope="col">Task Number</th>
+            <!--            <th scope="col">Task Number</th>-->
             <th scope="col">Task Name</th>
             <th scope="col">Status</th>
             <th scope="col">Edit</th>
@@ -35,10 +40,11 @@
         </tr>
         </thead>
         <tbody>
+        {% if all_tasks %}
         {% for object in all_tasks %}
         {% if object.status %}
         <tr class="table-success">
-            <th scope="row">{{object.id}}</th>
+            <!--                    <td>{{object.id}}</td>-->
             <td>{{object.task}}</td>
             <td>Completed</td>
             <td></td>
@@ -46,14 +52,19 @@
         </tr>
         {% else %}
         <tr>
-            <th scope="row">{{object.id}}</th>
+            <!--                    <td>{{object.id}}</td>-->
             <td>{{object.task}}</td>
             <td>Not Completed</td>
             <td></td>
             <td></td>
-            {% endif %}
         </tr>
+        {% endif %}
         {% endfor %}
+        {% else %}
+        <tr>
+            <td colspan="4" class="text-center">You have no tasks!</td>
+        </tr>
+        {% endif %}
         </tbody>
     </table>
 </div>
