@@ -47,7 +47,7 @@
             <!--                    <td>{{object.id}}</td>-->
             <td>{{ object.id }} | {{ object.task }}</td>
             <td>Completed</td>
-            <td></td>
+            <td><a href="{% url 'edittask' object.id %}" class="btn btn-primary">Edit</a></td>
             <td><a href="{% url 'deletetask' object.id %}" class="btn btn-danger">Delete</a></td>
         </tr>
         {% else %}
@@ -55,7 +55,7 @@
             <!--                    <td>{{object.id}}</td>-->
             <td>{{ object.task }}</td>
             <td>Not Completed</td>
-            <td></td>
+            <td><a href="{% url 'edittask' object.id %}" class="btn btn-primary">Edit</a></td>
             <td><a href="{% url 'deletetask' object.id %}" class="btn btn-danger">Delete</a></td>
         </tr>
         {% endif %}

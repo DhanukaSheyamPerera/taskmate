@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Edit Task | TaskMate</title>
+{% endblock title %}
+
+{% block content %}
+<br>
+<div class="container">
+    <!--    <form method="POST">-->
+    <!--        {% csrf_token %}-->
+    <!--        <div class="row">-->
+    <!--            <label for="task" class="form-label col-lg-4"></label>-->
+    <!--            <div class="col-lg-6">-->
+    <!--                <input type="text" class="form-control" id="task" name="task" placeholder="New Task?"-->
+    <!--                       value="{{ task_title }}">-->
+    <!--            </div>-->
+    <!--            <div class="col-lg-2">-->
+    <!--                <button type="submit" class="btn btn-primary">Add Task</button>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </form>-->
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="task" class="form-label">Update Task</label>
+            <input type="text" class="form-control" id="task" placeholder="{{ task_title }}" value="{{ task_title }}" name="task">
+            <input type="hidden" name="status" value="{{ task_status }}">
+        </div>
+<!--        <div class="mb-3 form-check">-->
+<!--            <input type="checkbox" class="form-check-input" id="exampleCheck1">-->
+<!--            <label class="form-check-label" for="exampleCheck1">Done</label>-->
+<!--        </div>-->
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>
+{% endblock content %}
