@@ -7,6 +7,12 @@ from django.core.paginator import Paginator
 
 
 # Create your views here.
+def index(request):
+    context = {
+        "index_text": "Welcome to TaskMate"
+    }
+    return render(request, "index.html", context)
+
 def todolist(request):
     if request.method == "POST":
         form = TaskForm(request.POST or None)

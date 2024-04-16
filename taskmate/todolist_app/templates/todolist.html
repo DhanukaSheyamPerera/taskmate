@@ -31,35 +31,34 @@
     <br>
     <table class="table">
         <thead class="table-dark">
-        <tr>
-            <!--            <th scope="col">Task Number</th>-->
-            <th scope="col">Task Name</th>
-            <th scope="col">Status</th>
-            <th scope="col">Edit</th>
-            <th scope="col">Delete</th>
+        <tr class="row">
+            <th class="col-7">Task Name</th>
+            <th class="col-3">Status</th>
+            <th class="col-1">Edit</th>
+            <th class="col-1">Delete</th>
         </tr>
         </thead>
         <tbody>
         {% if all_tasks %}
         {% for object in all_tasks %}
         {% if object.status %}
-        <tr class="table-success">
-            <td>{{ object.task }}</td>
-            <td><a href="{% url 'pendingtask' object.id %}" class="btn btn-primary">Mark Not Completed</a></td>
-            <td><a href="{% url 'edittask' object.id %}" class="btn btn-primary">Edit</a></td>
-            <td><a href="{% url 'deletetask' object.id %}" class="btn btn-danger">Delete</a></td>
+        <tr class="table-success row">
+            <td class="col-7">{{ object.task }}</td>
+            <td class="col-3"><a href="{% url 'pendingtask' object.id %}"><button type="button" class="btn btn-secondary">Mark Not Completed</button></a></td>
+            <td class="col-1"><a href="{% url 'edittask' object.id %}"><button type="button" class="btn btn-warning">Edit</button></a></td>
+            <td class="col-1"><a href="{% url 'deletetask' object.id %}"><button type="button" class="btn btn-danger">Delete</button></a></td>
         </tr>
         {% else %}
-        <tr>
-            <td>{{ object.task }}</td>
-            <td><a href="{% url 'completetask' object.id %}" class="btn btn-primary">Mark Completed</a></td>
-            <td><a href="{% url 'edittask' object.id %}" class="btn btn-primary">Edit</a></td>
-            <td><a href="{% url 'deletetask' object.id %}" class="btn btn-danger">Delete</a></td>
+        <tr class="row">
+            <td class="col-7"> {{ object.task }}</td>
+            <td class="col-3"><a href="{% url 'completetask' object.id %}"><button type="button" class="btn btn-secondary">Mark Completed</button></a></td>
+            <td class="col-1"><a href="{% url 'edittask' object.id %}"><button type="button" class="btn btn-warning">Edit</button></a></td>
+            <td class="col-1"><a href="{% url 'deletetask' object.id %}"><button type="button" class="btn btn-danger">Delete</button></a></td>
         </tr>
         {% endif %}
         {% endfor %}
         {% else %}
-        <tr>
+        <tr class="row">
             <td colspan="4" class="text-center">You have no tasks!</td>
         </tr>
         {% endif %}
