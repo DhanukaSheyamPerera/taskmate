@@ -1,11 +1,60 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    <title>TaskMate</title>
+<title>TaskMate</title>
 {% endblock title %}
 
 {% block content %}
-    <div class="container">
-        <h1>{{ welcome_todolist_text }}</h1>
-    </div>
+<div class="container">
+    <br>
+    <form>
+        <div class="mb-3">
+            <label for="task" class="form-label">Task</label>
+            <input type="text" class="form-control" id="task" aria-describedby="emailHelp" placeholder="New Task?">
+<!--            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
+        </div>
+<!--        <div class="mb-3">-->
+<!--            <label for="exampleInputPassword1" class="form-label">Password</label>-->
+<!--            <input type="password" class="form-control" id="exampleInputPassword1">-->
+<!--        </div>-->
+<!--        <div class="mb-3 form-check">-->
+<!--            <input type="checkbox" class="form-check-input" id="exampleCheck1">-->
+<!--            <label class="form-check-label" for="exampleCheck1">Check me out</label>-->
+<!--        </div>-->
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <br>
+    <table class="table">
+        <thead class="table-dark">
+        <tr>
+            <th scope="col">Task Number</th>
+            <th scope="col">Task Name</th>
+            <th scope="col">Status</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for object in all_tasks %}
+        {% if object.status %}
+        <tr class="table-success">
+            <th scope="row">{{object.id}}</th>
+            <td>{{object.task}}</td>
+            <td>Completed</td>
+            <td></td>
+            <td></td>
+        </tr>
+        {% else %}
+        <tr>
+            <th scope="row">{{object.id}}</th>
+            <td>{{object.task}}</td>
+            <td>Not Completed</td>
+            <td></td>
+            <td></td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
 {% endblock content %}
