@@ -45,18 +45,18 @@
         {% if object.status %}
         <tr class="table-success">
             <!--                    <td>{{object.id}}</td>-->
-            <td>{{object.task}}</td>
+            <td>{{ object.id }} | {{ object.task }}</td>
             <td>Completed</td>
             <td></td>
-            <td></td>
+            <td><a href="{% url 'deletetask' object.id %}" class="btn btn-danger">Delete</a></td>
         </tr>
         {% else %}
         <tr>
             <!--                    <td>{{object.id}}</td>-->
-            <td>{{object.task}}</td>
+            <td>{{ object.task }}</td>
             <td>Not Completed</td>
             <td></td>
-            <td></td>
+            <td><a href="{% url 'deletetask' object.id %}" class="btn btn-danger">Delete</a></td>
         </tr>
         {% endif %}
         {% endfor %}
