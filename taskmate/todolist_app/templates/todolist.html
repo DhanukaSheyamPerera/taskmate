@@ -18,8 +18,8 @@
     <form method="POST">
         {% csrf_token %}
         <div class="row">
-            <label for="task" class="form-label col-lg-4"></label>
-            <div class="col-lg-6">
+            <label for="task" class="form-label col-lg-2"></label>
+            <div class="col-lg-8">
                 <input type="text" class="form-control" id="task" name="task" placeholder="New Task?" required>
             </div>
             <div class="col-lg-2">
@@ -71,11 +71,17 @@
             <li class="page-item">
                 <a class="page-link" href="?pg=1">Previous</a>
             </li>
-            <li class="page-item"><a class="page-link" href="?pg={{ all_tasks.previous_page_number }}">{{ all_tasks.previous_page_number }}</a></li>
+            {% if all_tasks.has_previous %}
+            <li class="page-item"><a class="page-link" href="?pg={{ all_tasks.previous_page_number }}">
+                {{ all_tasks.previous_page_number }}</a></li>
+            {% endif %}
             <li class="page-item"><a class="page-link" href="?pg={{ all_tasks.number }}">{{ all_tasks.number }}</a></li>
-            <li class="page-item"><a class="page-link" href="?pg={{ all_tasks.next_page_number }}">{{ all_tasks.next_page_number }}</a></li>
+            {% if all_tasks.has_next %}
+            <li class="page-item"><a class="page-link" href="?pg={{ all_tasks.next_page_number }}">
+                {{ all_tasks.next_page_number }}</a></li>
+            {% endif %}
             <li class="page-item">
-                <a class="page-link" href="?pg={{ all_tasks.num_page }}">Next</a>
+                <a class="page-link" href="?pg={{ all_tasks.paginator.num_pages }}">Next</a>
             </li>
         </ul>
     </nav>
